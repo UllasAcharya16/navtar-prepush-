@@ -55,7 +55,7 @@ const ConferencePage = ({ user, room, onLeave }) => {
       });
 
       try {
-        const baseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+        const baseUrl = process.env.REACT_APP_API_BASE_URL || "https://navatar-ashen.vercel.app";
         const response = await fetch(`${baseUrl}/api/agora/token?channelName=${room}&uid=0`);
         const data = await response.json();
 

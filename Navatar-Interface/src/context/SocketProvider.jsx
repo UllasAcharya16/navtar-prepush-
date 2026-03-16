@@ -9,7 +9,6 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-  // const socket = useMemo(() => io("localhost:8000"), []);
   const socketUrl = process.env.REACT_APP_SOCKET_URL || "https://webrtc-m8ch.onrender.com";
   const socket = useMemo(() => io(socketUrl, {
     transports: ["websocket"],
