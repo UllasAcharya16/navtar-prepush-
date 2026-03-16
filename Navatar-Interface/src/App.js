@@ -3,7 +3,6 @@ import ConferencePage from "./components/ConferencePage";
 import { getDoctor } from "./context/doctorAPI";
 import dayjs from "dayjs";
 import { CircleUser } from "lucide-react";
-import { SocketProvider } from "./context/SocketProvider";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "./context/firebase";
 
@@ -126,13 +125,11 @@ export default function App() {
       isAudioOn: Navatar.isAudioOn,
     };
     return (
-      <SocketProvider>
-        <ConferencePage
-          user={user}
-          room={String(upcomingBooking.doctor_id)}
-          onLeave={handleLeave}
-        />
-      </SocketProvider>
+      <ConferencePage
+        user={user}
+        room={String(upcomingBooking.doctor_id)}
+        onLeave={handleLeave}
+      />
     );
   }
 

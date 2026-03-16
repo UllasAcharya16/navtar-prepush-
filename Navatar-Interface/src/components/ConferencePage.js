@@ -55,15 +55,11 @@ const ConferencePage = ({ user, room, onLeave }) => {
       });
 
       try {
-        const baseUrl = process.env.REACT_APP_API_BASE_URL || "https://navatar-ashen.vercel.app";
-        const response = await fetch(`${baseUrl}/api/agora/token?channelName=${room}&uid=0`);
-        const data = await response.json();
+        const appId = process.env.REACT_APP_AGORA_APP_ID;
+        if (!appId) throw new Error("REACT_APP_AGORA_APP_ID is not defined in environment variables");
 
-        if (data.error) throw new Error(data.error);
-
-        const { token, appId: serverAppId } = data;
-
-        await client.join(serverAppId, room, token, null);
+        // Join the channel with appId, room name, and null token (App ID only authentication)
+        await client.join(appId, room, null, null);
 
         // Try to get local tracks, but don't crash if we are on HTTP or denied permissions
         try {
