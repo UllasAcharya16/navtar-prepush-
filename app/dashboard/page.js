@@ -10,8 +10,6 @@ export default function Dashboard() {
 
       <div style={{ display: "flex", gap: "20px" }}>
 
-        <Card title="Hospitals" value="5" />
-
         <Card title="Doctors" value="20" />
 
         <Card title="Navatars" value="10" />

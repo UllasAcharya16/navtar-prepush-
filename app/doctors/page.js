@@ -112,17 +112,7 @@ export default function Page() {
           />
 
           {/* Status will later come from backend */}
-
-          <select
-            name="status"
-            value={form.status}
-            onChange={handleChange}
-            className="border p-2 rounded"
-          >
-            <option value="Active">Active</option>
-            <option value="Disabled">Disabled</option>
-          </select>
-
+          
           <button
             type="submit"
             className="bg-blue-600 text-white p-2 rounded"
@@ -144,7 +134,7 @@ export default function Page() {
 
         <table className="w-full border">
 
-          <thead>
+          {/* <thead>
             <tr className="bg-gray-100">
               <th className="p-2 border">Photo</th>
               <th className="p-2 border">Name</th>
@@ -152,7 +142,7 @@ export default function Page() {
               <th className="p-2 border">Department</th>
               <th className="p-2 border">Status</th>
             </tr>
-          </thead>
+          </thead> */}
 
           <tbody>
 
